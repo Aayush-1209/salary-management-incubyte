@@ -1,0 +1,85 @@
+# Ruby / Rails
+*.gem
+*.rbc
+.bundle
+.config
+.yardoc
+Gemfile.lock
+InstalledFiles
+_yardoc/
+coverage/
+doc/
+lib/bundler/man/
+pkg/
+rdoc/
+spec/reports/
+test/tmp/
+test/version_tmp/
+tmp/
+backend/tmp/
+backend/log/
+backend/storage/
+backend/public/packs
+backend/.byebug_history
+backend/config/master.key
+backend/config/credentials.yml.enc
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
+frontend/coverage/
+npm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# VSCode
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+!.vscode/extensions.json
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Logs
+*.log
+logs/
+
+# Database
+*.sqlite3
+*.sqlite3-journal
+*.db
+
+# Generated / build
+*.orig
+*.rej
+.sass-cache/
+connect.lock
+libpeerconnection.log
+testem.log
+typings/
+
+# Coverage reports
+coverage/
+.nyc_output/

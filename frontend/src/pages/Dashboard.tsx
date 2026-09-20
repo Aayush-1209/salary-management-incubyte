@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { api } from '../lib/api';
-import { Card, CardHeader, CardTitle, CardContent } from './ui/Card';
-import { Spinner } from './ui/Spinner';
+import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { Spinner } from '../components/ui/Spinner';
 import { Users, Building, Banknote } from 'lucide-react';
 
 interface SummaryData {

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: ->(_) { [200, { 'Content-Type' => 'application/json' }, [{ status: 'ok', message: 'Salary Management API is running' }.to_json]] }
+  root to: ->(_) { [ 200, { "Content-Type" => "application/json" }, [ { status: "ok", message: "Salary Management API is running" }.to_json ] ] }
 
   namespace :api do
     get "health", to: "health#show"

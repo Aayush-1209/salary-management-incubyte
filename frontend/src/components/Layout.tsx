@@ -1,4 +1,3 @@
-import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import { LayoutDashboard, Users, Building2 } from 'lucide-react';
 import './Layout.css';

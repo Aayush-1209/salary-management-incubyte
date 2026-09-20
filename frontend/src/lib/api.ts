@@ -21,13 +21,18 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 }
 
 export class ApiError extends Error {
+  public readonly status: number;
+  public readonly body?: unknown;
+
   constructor(
-    public readonly status: number,
+    status: number,
     message: string,
-    public readonly body?: unknown,
+    body?: unknown,
   ) {
     super(message)
     this.name = 'ApiError'
+    this.status = status;
+    this.body = body;
   }
 }
 

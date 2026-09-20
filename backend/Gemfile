@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "rails", "~> 7.2.3", ">= 7.2.3.2"
 gem "pg", "~> 1.1"
+gem "json", "~> 2.7"  # json 3.x removes quirks_mode; incompatible with Rails 7.2
 gem "puma", ">= 5.0"
 gem "rack-cors"
 gem "bootsnap", require: false

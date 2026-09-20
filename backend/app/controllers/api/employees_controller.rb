@@ -1,7 +1,7 @@
 module Api
   class EmployeesController < ApplicationController
-    ALLOWED_PER_PAGE = [10, 25, 50, 100].freeze
     DEFAULT_PER_PAGE = 25
+    MAX_PER_PAGE = 100
 
     def index
       employees = Employee.active
@@ -57,7 +57,9 @@ module Api
 
     def per_page_param
       requested = params[:per_page].to_i
-      ALLOWED_PER_PAGE.include?(requested) ? requested : DEFAULT_PER_PAGE
+      return DEFAULT_PER_PAGE unless requested.positive?
+
+      requested.clamp(1, MAX_PER_PAGE)
     end
 
     def employee_summary(employee)

@@ -100,9 +100,10 @@ See the `docs/` folder for:
 - [Performance](docs/performance.md)
 - [Deployment Guide](docs/deployment.md)
 
-## Live Demo
+## Live Demo & Walkthrough
 
-> 🔗 URL will be added after Render deployment
+- 🌍 **Live Application:** [https://salary-management-incubyte-azure.vercel.app](https://salary-management-incubyte-azure.vercel.app/)
+- 🎥 **Video Walkthrough:** [Watch on Loom](https://www.loom.com/share/e7d28311be3d487689e35497699c39cd)
 
 ## Notes
 

@@ -6,7 +6,7 @@ RSpec.describe 'Api::Analytics::Summary', type: :request do
       # Department 1: Engineering (2 active, 1 inactive)
       e1 = create(:employee, department: 'Engineering', active: true, currency: 'USD')
       create(:salary_history, employee: e1, effective_date: 1.month.ago, gross_salary: 100_000)
-      
+
       e2 = create(:employee, department: 'Engineering', active: true, currency: 'USD')
       create(:salary_history, employee: e2, effective_date: 1.month.ago, gross_salary: 80_000)
 
@@ -16,7 +16,7 @@ RSpec.describe 'Api::Analytics::Summary', type: :request do
       # Department 2: HR (1 active)
       e4 = create(:employee, department: 'HR', active: true, currency: 'EUR')
       create(:salary_history, employee: e4, effective_date: 1.month.ago, gross_salary: 60_000)
-      
+
       # For active Engineering employees, total current salary is 180,000 USD
       # For active HR employees, total current salary is 60,000 EUR
     end
@@ -28,7 +28,7 @@ RSpec.describe 'Api::Analytics::Summary', type: :request do
 
     it 'returns overall summary including active employee count and total departments' do
       get '/api/analytics/summary'
-      
+
       summary = response.parsed_body['summary']
       expect(summary['total_employees']).to eq(3) # Only active ones
       expect(summary['total_departments']).to eq(2)
@@ -36,11 +36,11 @@ RSpec.describe 'Api::Analytics::Summary', type: :request do
 
     it 'returns department wise breakdowns' do
       get '/api/analytics/summary'
-      
+
       departments = response.parsed_body['summary']['departments']
       expect(departments).to be_an(Array)
       expect(departments.length).to eq(2)
-      
+
       engineering = departments.find { |d| d['name'] == 'Engineering' }
       expect(engineering['employee_count']).to eq(2)
       expect(engineering['total_salary']).to eq('180000.0')

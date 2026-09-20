@@ -50,7 +50,7 @@ RSpec.describe 'Api::Employees::Salaries', type: :request do
       it 'returns 201 status and the created salary' do
         post "/api/employees/#{employee.id}/salaries", params: valid_attributes
         expect(response).to have_http_status(:created)
-        
+
         salary = response.parsed_body['salary']
         expect(salary['gross_salary'].to_f).to eq(80_000.0)
         expect(salary['reason']).to eq('merit_increase')
@@ -76,13 +76,13 @@ RSpec.describe 'Api::Employees::Salaries', type: :request do
       it 'returns 422 status with errors' do
         post "/api/employees/#{employee.id}/salaries", params: invalid_attributes
         expect(response).to have_http_status(:unprocessable_entity)
-        
+
         errors = response.parsed_body['errors']
         expect(errors).to include('gross_salary')
         expect(errors).to include('effective_date')
       end
     end
-    
+
     it 'returns 404 if employee does not exist' do
       post '/api/employees/999999/salaries', params: valid_attributes
       expect(response).to have_http_status(:not_found)

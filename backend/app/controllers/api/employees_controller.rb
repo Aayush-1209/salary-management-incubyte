@@ -10,7 +10,7 @@ module Api
                           .order(:last_name, :first_name)
 
       total = employees.count
-      page     = [params[:page].to_i, 1].max
+      page     = [ params[:page].to_i, 1 ].max
       per_page = per_page_param
 
       paginated = employees
@@ -33,7 +33,7 @@ module Api
       employee = Employee.includes(:salary_histories).find(params[:id])
       render json: { employee: employee_detail(employee) }
     rescue ActiveRecord::RecordNotFound
-      render json: { error: 'Employee not found' }, status: :not_found
+      render json: { error: "Employee not found" }, status: :not_found
     end
 
     private
@@ -50,7 +50,7 @@ module Api
 
       term = "%#{Employee.sanitize_sql_like(params[:search])}%"
       relation.where(
-        'first_name ILIKE :term OR last_name ILIKE :term OR email ILIKE :term OR employee_number ILIKE :term',
+        "first_name ILIKE :term OR last_name ILIKE :term OR email ILIKE :term OR employee_number ILIKE :term",
         term: term
       )
     end

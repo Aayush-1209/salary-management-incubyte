@@ -24,7 +24,7 @@ RSpec.describe SalaryHistory, type: :model do
         older = create(:salary_history, employee: employee, effective_date: 1.year.ago.to_date)
         newer = create(:salary_history, employee: employee, effective_date: 1.month.ago.to_date)
 
-        expect(SalaryHistory.chronological).to eq([newer, older])
+        expect(SalaryHistory.chronological).to eq([ newer, older ])
       end
     end
 

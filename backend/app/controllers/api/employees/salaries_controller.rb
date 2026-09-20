@@ -12,7 +12,7 @@ module Api
 
       def create
         salary = @employee.salary_histories.build(salary_params)
-        
+
         if salary.save
           render json: { salary: salary_history_json(salary) }, status: :created
         else
@@ -25,7 +25,7 @@ module Api
       def set_employee
         @employee = Employee.find(params[:employee_id])
       rescue ActiveRecord::RecordNotFound
-        render json: { error: 'Employee not found' }, status: :not_found
+        render json: { error: "Employee not found" }, status: :not_found
       end
 
       def salary_params

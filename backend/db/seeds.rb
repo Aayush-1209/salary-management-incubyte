@@ -41,15 +41,15 @@ TOTAL_EMPLOYEES.times do |i|
   country = COUNTRIES.sample
   department = DEPARTMENTS.sample
   level = LEVELS.sample
-  
+
   # Ensure unique email by appending the index
   email = "#{first_name.downcase}.#{last_name.downcase}.#{i}@acme.com"
-  
+
   # Ensure unique employee number
   emp_num = "EMP-#{format('%06d', i + 1)}"
-  
+
   hired_on = rand(1..10).years.ago.to_date
-  
+
   employees_data << {
     employee_number: emp_num,
     first_name: first_name,
@@ -82,14 +82,14 @@ puts "Generating Salary Histories..."
 employee_records.each do |id, hired_on, level|
   # Base salary depends on level
   base_salary = case level
-                when 'Junior' then 50_000
-                when 'Mid' then 80_000
-                when 'Senior' then 120_000
-                when 'Staff' then 160_000
-                when 'Principal' then 200_000
-                else 100_000
-                end
-                
+  when 'Junior' then 50_000
+  when 'Mid' then 80_000
+  when 'Senior' then 120_000
+  when 'Staff' then 160_000
+  when 'Principal' then 200_000
+  else 100_000
+  end
+
   # Add some randomness to base salary
   salary_amount = base_salary + rand(-10_000..20_000)
 

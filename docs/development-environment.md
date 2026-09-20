@@ -18,14 +18,13 @@ This document records the actual development environment used for the Incubyte s
 
 | Tool | Version | Notes |
 |------|---------|-------|
-| Ruby | 3.3.x | Installed via rbenv in WSL2 Ubuntu |
-| Rails | 7.1.x | Installed as gem after Ruby |
-| Node.js | 22.14.0 | Available on Windows host natively |
-| npm | 10.9.2 | Bundled with Node 22 |
-| PostgreSQL | 16.x | Installed in WSL2 Ubuntu |
-| Git | system | Available on both Windows and WSL2 |
+| Ruby | 3.3.5 | Installed via rbenv in WSL2 Ubuntu 24.04 |
+| Rails | 7.2.3.2 | Installed as gem |
+| Node.js | 22.23.2 | Installed via nvm in WSL2 |
+| PostgreSQL | 16.15 | Ubuntu package (Ubuntu 16.15-0ubuntu0.24.04.1) |
+| Git | 2.43.0 | System git in WSL2 |
+| OS (WSL2) | Ubuntu 24.04.5 LTS | Codename: noble |
 
-> **Note:** Ruby, Rails, and PostgreSQL versions above will be updated with exact values once WSL2 Ubuntu setup is complete. Node.js 22.14.0 and npm 10.9.2 were confirmed on the Windows host.
 
 ---
 

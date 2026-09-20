@@ -1,0 +1,44 @@
+.search-form {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 16px 8px 36px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.search-input:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 2px var(--brand-light);
+}
+
+.filter-select {
+  padding: 8px 32px 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  border-color: var(--brand-primary);
+}
+
+.border-b { border-bottom: 1px solid var(--border-color); }
+.border-t { border-top: 1px solid var(--border-color); }
+.w-full { width: 100%; }
+.px-4 { padding-left: 16px; padding-right: 16px; }
+.py-3 { padding-top: 12px; padding-bottom: 12px; }
+.py-8 { padding-top: 32px; padding-bottom: 32px; }
+.text-xs { font-size: 0.75rem; }
+.hover\:bg-\[var\(--bg-primary\)\]:hover { background-color: var(--bg-primary); }
+.cursor-pointer { cursor: pointer; }
+.transition-colors { transition: background-color var(--transition-fast), border-color var(--transition-fast); }

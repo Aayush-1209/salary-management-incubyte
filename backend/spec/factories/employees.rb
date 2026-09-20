@@ -26,4 +26,22 @@ FactoryBot.define do
       currency { "USD" }
     end
   end
+
+  factory :salary_history do
+    association :employee
+    gross_salary   { 75_000.00 }
+    effective_date { 1.month.ago.to_date }
+    reason         { "hire" }
+    notes          { nil }
+
+    trait :promotion do
+      reason       { "promotion" }
+      gross_salary { 90_000.00 }
+    end
+
+    trait :merit_increase do
+      reason       { "merit_increase" }
+      gross_salary { 80_000.00 }
+    end
+  end
 end
